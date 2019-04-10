@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -26,6 +27,10 @@ class LoginActivity : AppCompatActivity() {
         progressBar = findViewById(R.id.progressBar1)
 
         auth = FirebaseAuth.getInstance()
+
+        val showButtonRegister = findViewById<Button>(R.id.buttonRegis)
+        showButtonRegister.setOnClickListener{val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)}
     }
 
     fun olvidoPassword(view: View) {
@@ -60,5 +65,7 @@ class LoginActivity : AppCompatActivity() {
     private fun action() {
         startActivity(Intent(this, MainActivity::class.java))
     }
+
+
 
 }

@@ -35,7 +35,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
                     if (task.isSuccessful) {
                             progressBar.visibility = View.VISIBLE
-                        startActivity(Intent(this, MainActivity::class.java))
+                        startActivity(Intent(this, LoginActivity::class.java))
                     } else {
                         Toast.makeText(this, "Error al enviar el correo", Toast.LENGTH_LONG).show()
                     }
